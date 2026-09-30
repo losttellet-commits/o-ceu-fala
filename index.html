@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhar ao Vivo / Contrainformar - Leitura Vernacular do Tempo</title>
+    <style>
+        :root {
+            --primary: #1a5b6e;
+            --accent: #8c592b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--primary);
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        /* Estilo da Proposta / Manifesto */
+        .synthesis-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--primary);
+            padding: 18px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .operations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .op-box {
+            background: #fafafa;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .op-box h3 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .grid-2d {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+        }
+
+        .img-container {
+            text-align: center;
+        }
+
+        .img-container h3 {
+            font-size: 1rem;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>O Céu Fala Conosco</h1>
+        <p class="subtitle">Uma cartografia de contrainformação sobre a dinâmica de nuvens e previsão do tempo no Rio de Janeiro</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Bloco Conceitual / Enquadramento do Trabalho -->
+        <div class="card">
+            <h2>Proposta Cartográfica & Conceito</h2>
+            
+            <div class="synthesis-box">
+                “Eu me aproximei do <strong>céu da orla da Praia de Icaraí</strong> por meio de <strong>DESENHAR AO VIVO</strong>. Fotografei <strong>nuvens altas (Cirrus e Cirrostratus) que indicaram o avanço de um sistema frontal (frente fria) associado a um ciclone extratropical, que ocasionou na ventania durante o periódo da noite no dia 29 de setembro de 2026</strong>. Ao <strong>CONTRAINFORMAR</strong>, transformei isso em <strong>um guia vernacular interativo de leitura do tempo</strong>, fazendo aparecer <strong>a capacidade do cidadão de ler os sinais da atmosfera diretamente pela observação do céu no tempo presente, subvertendo a dependência de aplicativos genéricos</strong>.”
+            </div>
+
+            <div class="operations-grid">
+                <div class="op-box">
+                    <h3>1ª Operação: DESENHAR AO VIVO</h3>
+                    <p>Registro fotográfico realizado na Praia de Icaraí para observar a dinâmica das nuvens. Ao contornar ao vivo a morfologia das formações de altitude (Cirrus uncinus), isolou-se a assinatura visual que sucedeu a ventania no litoral fluminense.</p>
+                </div>
+                <div class="op-box">
+                    <h3>2ª Operação: CONTRAINFORMAR</h3>
+                    <p>A informação meteorológica oficial costuma ser reduzida a porcentagens abstratas em aplicativos. A transformação material utiliza este site para traduzir o conhecimento técnico em uma ferramenta de leitura direta do território e do céu pelo cidadão.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloco de Registros / Observação da Praia de Icaraí -->
+        <div class="card">
+            <h2>Observação de Campo e Contorno do Céu</h2>
+            <div class="grid-2d">
+                <div class="img-container">
+                    <h3>Fotografia Original da Praia de Icaraí</h3>
+                    <img src="img_praia_icarai.jpg" alt="Foto Original do Céu na Praia de Icaraí">
+                </div>
+                <div class="img-container">
+                    <h3>Contorno Vetorial das Nuvens (Desenhar ao Vivo)</h3>
+                    <img src="img_nuvens_contornadas.jpeg" alt="Contorno das nuvens Cirrus">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Desenvolvido com HTML5 & CSS3 — Projeto de Genealogias das Artes/Espaço e Meio Ambiente</p>
+    </footer>
+
+</body>
+</html>
