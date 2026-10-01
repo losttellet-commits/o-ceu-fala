@@ -1,11 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Desenhar ao Vivo / Contrainformar - Leitura Vernacular do Tempo</title>
+    <title>
+        Desenhar ao Vivo / Contrainformar - Leitura Vernacular do Tempo
+    </title>
+
 
     <style>
 
@@ -15,274 +20,790 @@
             --bg: #f8fafc;
             --card-bg: #ffffff;
             --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
         }
+
 
         * {
             box-sizing: border-box;
         }
 
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            font-family:
+                'Segoe UI',
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+
             background-color: var(--bg);
+
             color: var(--text);
+
             margin: 0;
+
             padding: 20px;
+
             line-height: 1.6;
+
         }
+
+
+        /* =========================
+           CABEÇALHO
+           ========================= */
 
         header {
+
             text-align: center;
+
             margin-bottom: 30px;
+
             padding: 30px 20px;
+
             background: var(--card-bg);
+
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+            box-shadow:
+                0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
         }
+
 
         h1 {
+
             color: var(--primary);
+
             margin: 0 0 10px 0;
+
             font-size: 2rem;
+
         }
+
 
         .subtitle {
-            color: #64748b;
+
+            color: var(--muted);
+
             font-size: 1.1rem;
+
             margin: 0;
+
         }
+
+
+        /* =========================
+           ESTRUTURA
+           ========================= */
 
         .container {
+
             max-width: 1200px;
+
             margin: 0 auto;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 25px;
+
         }
+
 
         .card {
+
             background: var(--card-bg);
+
             border-radius: 12px;
+
             padding: 25px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+            box-shadow:
+                0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
         }
 
+
         .card h2 {
+
             font-size: 1.3rem;
+
             color: var(--primary);
+
             margin-top: 0;
+
             margin-bottom: 15px;
-            border-bottom: 2px solid #e2e8f0;
+
+            border-bottom: 2px solid var(--border);
+
             padding-bottom: 8px;
+
         }
+
 
         /* =========================
            PROPOSTA / MANIFESTO
            ========================= */
 
         .synthesis-box {
+
             background-color: #f1f5f9;
+
             border-left: 4px solid var(--primary);
+
             padding: 18px;
+
             border-radius: 0 8px 8px 0;
+
             font-size: 1.1rem;
+
             font-style: italic;
+
             color: #0f172a;
+
             margin-bottom: 20px;
+
         }
+
 
         /* =========================
            OPERAÇÕES
            ========================= */
 
         .operations-grid {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
             gap: 20px;
+
             margin-top: 15px;
+
         }
+
 
         .op-box {
+
             background: #fafafa;
-            border: 1px solid #e2e8f0;
+
+            border: 1px solid var(--border);
+
             padding: 15px;
+
             border-radius: 8px;
+
         }
 
+
         .op-box h3 {
+
             margin-top: 0;
+
             color: var(--accent);
+
             font-size: 1rem;
+
             text-transform: uppercase;
+
             letter-spacing: 0.5px;
+
         }
+
+
+        /* =========================
+           ATLAS GERAL
+           ========================= */
+
+        .atlas-intro {
+
+            max-width: 900px;
+
+            margin: 0 auto 20px auto;
+
+            color: #475569;
+
+            text-align: center;
+
+        }
+
+
+        .atlas-image-container {
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            padding: 10px;
+
+            background: #f8fafc;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+        }
+
+
+        .atlas-image-container img {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            border-radius: 6px;
+
+        }
+
+
+        .atlas-caption {
+
+            margin-top: 10px;
+
+            font-size: 0.85rem;
+
+            color: var(--muted);
+
+            text-align: center;
+
+        }
+
+
+        .atlas-note {
+
+            max-width: 950px;
+
+            margin: 20px auto 0 auto;
+
+            padding: 15px 18px;
+
+            text-align: left;
+
+            background: #f1f5f9;
+
+            border-left: 4px solid var(--primary);
+
+            border-radius: 0 8px 8px 0;
+
+            color: #475569;
+
+            font-size: 0.92rem;
+
+        }
+
+
+        /* =========================
+           O QUE CADA NUVEM PODE INDICAR
+           ========================= */
+
+        .cloud-guide-intro {
+
+            color: #475569;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .cloud-guide-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 16px;
+
+        }
+
+
+        .cloud-guide-card {
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            padding: 18px;
+
+            background: #fafafa;
+
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
+
+        }
+
+
+        .cloud-guide-card:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 12px rgba(0,0,0,0.08);
+
+        }
+
+
+        .cloud-name {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .cloud-name h3 {
+
+            margin: 0;
+
+            color: var(--primary);
+
+            font-size: 1.1rem;
+
+        }
+
+
+        .cloud-abbr {
+
+            display: inline-block;
+
+            padding: 3px 8px;
+
+            border-radius: 20px;
+
+            background: #e2e8f0;
+
+            color: #334155;
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+        }
+
+
+        .cloud-level {
+
+            font-size: 0.8rem;
+
+            font-weight: 600;
+
+            color: var(--accent);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.4px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .cloud-guide-card p {
+
+            font-size: 0.92rem;
+
+            margin: 8px 0;
+
+        }
+
+
+        .cloud-guide-card strong {
+
+            color: #334155;
+
+        }
+
+
+        .cloud-caution {
+
+            margin-top: 20px;
+
+            padding: 14px 16px;
+
+            background: #fff7ed;
+
+            border-left: 4px solid var(--accent);
+
+            border-radius: 0 8px 8px 0;
+
+            color: #475569;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        /* =========================
+           DESTAQUE DAS NUVENS DO TRABALHO
+           ========================= */
+
+        .observed-clouds {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 2px solid var(--border);
+
+        }
+
+
+        .observed-clouds h3 {
+
+            color: var(--primary);
+
+            margin-top: 0;
+
+        }
+
+
+        .observed-cloud-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 15px;
+
+        }
+
+
+        .observed-cloud {
+
+            padding: 16px;
+
+            border-radius: 8px;
+
+            background: #f1f5f9;
+
+            border: 1px solid var(--border);
+
+        }
+
+
+        .observed-cloud strong {
+
+            display: block;
+
+            color: var(--primary);
+
+            margin-bottom: 5px;
+
+        }
+
 
         /* =========================
            IMAGENS / CARTOGRAFIA
            ========================= */
 
         .grid-2d {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             grid-template-rows: auto auto;
+
             gap: 20px;
+
             align-items: stretch;
+
         }
+
 
         .img-container {
+
             text-align: center;
+
             display: flex;
+
             flex-direction: column;
+
             min-width: 0;
+
         }
+
 
         .img-container h3 {
+
             font-size: 1rem;
+
             color: #334155;
+
             margin: 0 0 10px 0;
+
             min-height: 48px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
         }
+
 
         .img-container img {
+
             width: 100%;
+
             height: 100%;
+
             object-fit: contain;
+
             border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 2px 4px rgba(0,0,0,0.05);
+
             background: #f1f5f9;
+
         }
 
-        /* 1 — GOES Brasil
-           Ocupa as duas linhas da coluna esquerda */
+
+        /* GOES Brasil */
+
         .img-container:nth-child(1) {
+
             grid-column: 1;
+
             grid-row: 1 / 3;
+
         }
 
-        /* 2 — Fotografia de Icaraí */
+
+        /* Fotografia */
+
         .img-container:nth-child(2) {
+
             grid-column: 2;
+
             grid-row: 1;
+
         }
 
-        /* 3 — Contorno das nuvens */
+
+        /* Contorno */
+
         .img-container:nth-child(3) {
+
             grid-column: 2;
+
             grid-row: 2;
+
         }
 
-        /* 4 — Sequência GOES Sudeste
-           Ocupa toda a largura */
+
+        /* Sequência GOES */
+
         .img-container:nth-child(4) {
+
             grid-column: 1 / 3;
+
             grid-row: 3;
+
         }
 
-        /* A sequência de satélite mantém sua proporção */
+
         .img-container:nth-child(4) img {
+
             height: auto;
+
             max-height: 650px;
+
         }
+
 
         /* =========================
            DIAGNÓSTICO / PREVISÃO
            ========================= */
 
         .forecast-grid {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
             gap: 20px;
+
         }
+
 
         .forecast-card {
+
             background: #fafafa;
-            border: 1px solid #e2e8f0;
+
+            border: 1px solid var(--border);
+
             padding: 20px;
+
             border-radius: 8px;
+
         }
+
 
         .forecast-card h3 {
+
             color: var(--primary);
+
             margin-top: 10px;
+
         }
+
 
         .badge-cloud {
+
             display: inline-block;
+
             background: #e2e8f0;
+
             color: #334155;
+
             padding: 5px 10px;
+
             border-radius: 20px;
+
             font-size: 0.8rem;
+
             font-weight: 600;
+
         }
+
 
         .timeline-item {
+
             border-left: 3px solid var(--accent);
+
             padding: 10px 15px;
+
             margin: 15px 0;
+
             background: #f8fafc;
+
             border-radius: 0 6px 6px 0;
+
         }
+
 
         .observation-note {
+
             margin-top: 20px;
+
             padding: 12px 15px;
+
             background: #f1f5f9;
+
             border-radius: 8px;
+
             font-size: 0.9rem;
+
             color: #475569;
+
         }
 
+
         /* =========================
-           MAPA WINDY
+           WINDY
            ========================= */
 
         .windy-intro {
+
             margin-bottom: 20px;
+
             color: #475569;
+
         }
+
 
         .windy-container {
+
             width: 100%;
+
             height: 600px;
+
             margin-top: 20px;
+
             overflow: hidden;
+
             border-radius: 10px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 2px 4px rgba(0,0,0,0.05);
+
             background: #e2e8f0;
+
         }
+
 
         .windy-container iframe {
+
             width: 100%;
+
             height: 100%;
+
             border: none;
+
             display: block;
+
         }
 
+
         .windy-note {
+
             margin-top: 15px;
+
             padding: 12px 15px;
+
             background: #f1f5f9;
+
             border-radius: 8px;
+
             font-size: 0.9rem;
+
             color: #475569;
+
         }
+
 
         /* =========================
            RODAPÉ
            ========================= */
 
         footer {
+
             text-align: center;
+
             margin-top: 40px;
+
             padding: 20px;
+
             color: #94a3b8;
+
             font-size: 0.9rem;
+
         }
+
 
         /* =========================
            RESPONSIVIDADE
@@ -291,75 +812,113 @@
         @media (max-width: 700px) {
 
             body {
+
                 padding: 10px;
+
             }
+
 
             header {
+
                 padding: 25px 15px;
+
             }
+
 
             h1 {
+
                 font-size: 1.6rem;
+
             }
+
 
             .subtitle {
+
                 font-size: 1rem;
+
             }
+
 
             .card {
+
                 padding: 18px;
+
             }
 
-            /* No celular, uma imagem abaixo da outra */
+
             .grid-2d {
+
                 grid-template-columns: 1fr;
+
                 grid-template-rows: auto;
+
             }
+
 
             .img-container:nth-child(1),
             .img-container:nth-child(2),
             .img-container:nth-child(3),
             .img-container:nth-child(4) {
+
                 grid-column: 1;
+
                 grid-row: auto;
+
             }
+
 
             .img-container img {
+
                 height: auto;
+
                 max-height: none;
+
             }
 
+
             .windy-container {
+
                 height: 450px;
+
             }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- =========================
+
+    <!-- ==========================================
          CABEÇALHO
-         ========================= -->
+         ========================================== -->
 
     <header>
 
-        <h1>O Céu Fala Conosco</h1>
+        <h1>
+            O Céu Fala Conosco
+        </h1>
+
 
         <p class="subtitle">
-            Uma cartografia de contrainformação sobre a dinâmica de nuvens
-            e previsão do tempo por Lorena Sttellet
+
+            Uma cartografia de contrainformação sobre a dinâmica
+            de nuvens e previsão do tempo por Lorena Sttellet
+
         </p>
 
     </header>
 
 
+
     <div class="container">
 
+
         <!-- ==========================================
-             BLOCO CONCEITUAL / ENQUADRAMENTO
+             1. PROPOSTA CARTOGRÁFICA
              ========================================== -->
 
         <div class="card">
@@ -367,6 +926,7 @@
             <h2>
                 Proposta Cartográfica & Conceito
             </h2>
+
 
             <div class="synthesis-box">
 
@@ -402,7 +962,9 @@
             </div>
 
 
+
             <div class="operations-grid">
+
 
                 <div class="op-box">
 
@@ -410,7 +972,9 @@
                         1ª Operação: DESENHAR AO VIVO
                     </h3>
 
+
                     <p>
+
                         Registro fotográfico realizado na Praia de Icaraí
                         para observar a dinâmica das nuvens.
 
@@ -418,9 +982,11 @@
                         de altitude, isolou-se a assinatura visual que
                         sucedeu a precipitação do dia 30/09 no litoral
                         fluminense.
+
                     </p>
 
                 </div>
+
 
 
                 <div class="op-box">
@@ -429,14 +995,731 @@
                         2ª Operação: CONTRAINFORMAR
                     </h3>
 
+
                     <p>
+
                         A informação meteorológica oficial costuma ser
                         reduzida a porcentagens abstratas em aplicativos.
 
                         A transformação material utiliza este site para
                         traduzir o conhecimento técnico em uma ferramenta
                         de leitura direta do território e do céu pelo cidadão.
+
                     </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==========================================
+             2. ATLAS GERAL DAS NUVENS
+             ========================================== -->
+
+        <div class="card">
+
+            <h2>
+                ☁ Atlas Geral das Nuvens
+            </h2>
+
+
+            <p class="atlas-intro">
+
+                Antes de interpretar as formações observadas no céu
+                de Icaraí, conheça os dez gêneros fundamentais de
+                nuvens reconhecidos pela Organização Meteorológica
+                Mundial.
+
+                A identificação parte da aparência, estrutura,
+                organização e nível atmosférico em que a nuvem se forma.
+
+            </p>
+
+
+            <div class="atlas-image-container">
+
+                <img
+                    src="atlas-identificacao-nuvens.jpg"
+                    alt="Atlas de identificação de nuvens da Organização Meteorológica Mundial"
+                >
+
+            </div>
+
+
+            <p class="atlas-caption">
+
+                <strong>Fonte:</strong>
+                World Meteorological Organization —
+                International Cloud Atlas.
+
+            </p>
+
+
+            <div class="atlas-note">
+
+                <strong>
+                    Como ler o atlas:
+                </strong>
+
+                observe primeiro a estrutura da nuvem,
+                sua aparência geral e seu desenvolvimento vertical.
+
+                A altura também ajuda na identificação:
+
+                nuvens altas incluem Cirrus, Cirrocumulus e Cirrostratus;
+                nuvens médias incluem Altocumulus, Altostratus e Nimbostratus;
+                enquanto Stratus, Stratocumulus e Cumulus possuem bases
+                normalmente baixas.
+
+                O Cumulonimbus possui base baixa, mas pode se estender
+                verticalmente por vários níveis da atmosfera.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==========================================
+             3. O QUE CADA NUVEM PODE INDICAR
+             ========================================== -->
+
+        <div class="card">
+
+            <h2>
+                O que cada nuvem pode indicar?
+            </h2>
+
+
+            <p class="cloud-guide-intro">
+
+                A forma de uma nuvem constitui uma pista sobre
+                os processos atmosféricos presentes naquele momento.
+
+                A leitura abaixo não deve ser entendida como uma
+                previsão isolada, mas como uma forma de relacionar
+                morfologia, umidade, estabilidade, convecção e
+                evolução do tempo.
+
+            </p>
+
+
+            <div class="cloud-guide-grid">
+
+
+                <!-- CIRRUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Cirrus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            Ci
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Nuvem alta
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        filamentos finos, delicados ou fibrosos,
+                        com aparência de penas ou fios.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        presença de cristais de gelo em altos níveis
+                        e circulação atmosférica nessa região.
+
+                        Quando os Cirrus aumentam e se organizam,
+                        sua evolução pode acompanhar a aproximação
+                        de sistemas meteorológicos de maior escala.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- CIRROCUMULUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Cirrocumulus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            Cc
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Nuvem alta
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        pequenos elementos brancos, grãos ou ondulações
+                        organizados em campos.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        presença de umidade e movimentos atmosféricos
+                        nos altos níveis.
+
+                        Sua distribuição e evolução ajudam a compreender
+                        a estrutura da circulação nessa camada.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- CIRROSTRATUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Cirrostratus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            Cs
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Nuvem alta
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        véu fino, esbranquiçado e relativamente
+                        transparente, podendo produzir halo ao redor
+                        do Sol ou da Lua.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        aumento de umidade nos altos níveis.
+
+                        Quando se torna mais extenso e espesso,
+                        pode fazer parte da evolução da nebulosidade
+                        associada a sistemas frontais.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- ALTOCUMULUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Altocumulus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            Ac
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Nuvem média
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        elementos arredondados ou alongados,
+                        organizados em grupos, faixas ou ondulações.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        presença de umidade e movimentos na média
+                        troposfera.
+
+                        Algumas formas específicas, como
+                        <em>Altocumulus castellanus</em>,
+                        podem estar associadas à instabilidade
+                        em níveis médios.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- ALTOSTRATUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Altostratus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            As
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Nuvem média
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        camada extensa, cinzenta ou azulada,
+                        relativamente uniforme.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        aumento da cobertura de nuvens em escala
+                        mais ampla.
+
+                        Pode estar associado a sistemas que produzem
+                        precipitação e, em determinadas situações,
+                        anteceder ou acompanhar a evolução de uma
+                        área de chuva.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- NIMBOSTRATUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Nimbostratus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            Ns
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Desenvolvimento amplo
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        camada espessa e extensa, geralmente escura,
+                        associada a precipitação persistente.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        chuva ou neve de caráter predominantemente
+                        estratiforme e contínuo.
+
+                        Diferentemente do Cumulonimbus, não apresenta
+                        necessariamente o grande desenvolvimento
+                        convectivo vertical típico de tempestades.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- STRATOCUMULUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Stratocumulus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            Sc
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Nuvem baixa
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        grandes blocos, rolos ou agrupamentos baixos,
+                        geralmente formando uma camada descontínua.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        presença de umidade e estrutura relativamente
+                        estável na baixa atmosfera.
+
+                        Pode produzir precipitação fraca em algumas
+                        situações.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- STRATUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Stratus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            St
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Nuvem baixa
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        camada baixa, uniforme e acinzentada,
+                        semelhante a uma névoa elevada.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        ar úmido e relativamente estável próximo
+                        à superfície.
+
+                        Pode estar associado à ocorrência de garoa.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- CUMULUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Cumulus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            Cu
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Nuvem baixa — grande extensão vertical possível
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        nuvens isoladas, com aparência de blocos
+                        ou "algodões" e contornos definidos.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        desenvolvimento de convecção na baixa atmosfera.
+
+                        Dependendo da evolução vertical e das condições
+                        de umidade e instabilidade, pode permanecer
+                        pouco desenvolvida ou crescer para formas
+                        convectivas mais intensas.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- CUMULONIMBUS -->
+
+                <div class="cloud-guide-card">
+
+                    <div class="cloud-name">
+
+                        <h3>
+                            Cumulonimbus
+                        </h3>
+
+                        <span class="cloud-abbr">
+                            Cb
+                        </span>
+
+                    </div>
+
+
+                    <div class="cloud-level">
+                        Desenvolvimento vertical
+                    </div>
+
+
+                    <p>
+
+                        <strong>
+                            Como reconhecer:
+                        </strong>
+
+                        enorme desenvolvimento vertical,
+                        frequentemente com topo achatado ou em forma
+                        de bigorna.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            O que pode indicar:
+                        </strong>
+
+                        convecção profunda e possibilidade de tempestade.
+
+                        Pode estar associado a chuva intensa,
+                        descargas elétricas, granizo e rajadas fortes,
+                        dependendo do estágio e da estrutura da tempestade.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="cloud-caution">
+
+                <strong>
+                    Importante:
+                </strong>
+
+                nenhuma nuvem deve ser interpretada isoladamente como
+                uma previsão do tempo.
+
+                A leitura do céu ganha significado quando observamos
+                sua <strong>evolução temporal</strong>, seu
+                <strong>deslocamento</strong>, a mudança na
+                <strong>direção e intensidade dos ventos</strong>,
+                a distribuição da nebulosidade e outros dados
+                meteorológicos.
+
+            </div>
+
+
+
+            <!-- NUVENS DO SEU REGISTRO -->
+
+            <div class="observed-clouds">
+
+                <h3>
+                    As formações observadas neste trabalho
+                </h3>
+
+
+                <div class="observed-cloud-grid">
+
+
+                    <div class="observed-cloud">
+
+                        <strong>
+                            Cirrus
+                        </strong>
+
+                        Nuvens altas, filiformes, que aparecem
+                        no registro fotográfico e no contorno.
+
+                    </div>
+
+
+                    <div class="observed-cloud">
+
+                        <strong>
+                            Cirrostratus
+                        </strong>
+
+                        Véu de altos níveis relacionado à leitura
+                        da evolução da nebulosidade.
+
+                    </div>
+
+
+                    <div class="observed-cloud">
+
+                        <strong>
+                            Altocumulus
+                        </strong>
+
+                        Formação de nível médio observada em
+                        fragmentos e faixas.
+
+                    </div>
+
+
+                    <div class="observed-cloud">
+
+                        <strong>
+                            Cumulonimbus
+                        </strong>
+
+                        Formação convectiva de grande desenvolvimento
+                        vertical relacionada ao episódio de tempestade.
+
+                    </div>
+
 
                 </div>
 
@@ -445,8 +1728,9 @@
         </div>
 
 
+
         <!-- ==========================================
-             OBSERVAÇÃO DE CAMPO
+             4. OBSERVAÇÃO DE CAMPO
              ========================================== -->
 
         <div class="card">
@@ -459,14 +1743,17 @@
             <div class="grid-2d">
 
 
-                <!-- 1 — GOES BRASIL -->
+                <!-- GOES BRASIL -->
 
                 <div class="img-container">
 
                     <h3>
-                        Imagem do satélite GOES 16 no canal infravermelho
-                        do Brasil 29/09/2026
+
+                        Imagem do satélite GOES 16 no canal
+                        infravermelho do Brasil 29/09/2026
+
                     </h3>
+
 
                     <img
                         src="img-infra-brasil.png"
@@ -476,13 +1763,17 @@
                 </div>
 
 
-                <!-- 2 — FOTO ICARAÍ -->
+
+                <!-- FOTO ICARAÍ -->
 
                 <div class="img-container">
 
                     <h3>
-                        Fotografia Original da Praia de Icaraí 30/09
+
+                        Fotografia Original da Praia de Icaraí 29/09
+
                     </h3>
+
 
                     <img
                         src="img_praia_icarai.jpg"
@@ -492,14 +1783,18 @@
                 </div>
 
 
-                <!-- 3 — CONTORNO -->
+
+                <!-- CONTORNO -->
 
                 <div class="img-container">
 
                     <h3>
+
                         Contorno Vetorial das Nuvens
                         (Desenhar ao Vivo)
+
                     </h3>
+
 
                     <img
                         src="img_nuvens_contornadas.PNG"
@@ -509,15 +1804,20 @@
                 </div>
 
 
-                <!-- 4 — SEQUÊNCIA GOES -->
+
+                <!-- SEQUÊNCIA GOES -->
 
                 <div class="img-container">
 
                     <h3>
-                        Imagens do satélite GOES 16 no canal infravermelho
-                        da Região Sudeste do Brasil 30/09/2026 às 18:10 UTC
-                        e 21:20 UTC (-3 horas local)
+
+                        Imagens do satélite GOES 16 no canal
+                        infravermelho da Região Sudeste do Brasil
+                        30/09/2026 às 18:10 UTC e 21:20 UTC
+                        (-3 horas local)
+
                     </h3>
+
 
                     <img
                         src="imagens-satelite.png"
@@ -526,13 +1826,15 @@
 
                 </div>
 
+
             </div>
 
         </div>
 
 
+
         <!-- ==========================================
-             DIAGNÓSTICO E PREVISÃO
+             5. DIAGNÓSTICO E PREVISÃO
              ========================================== -->
 
         <div class="card">
@@ -545,13 +1847,16 @@
             <div class="forecast-grid">
 
 
-                <!-- ANÁLISE DAS NUVENS -->
+                <!-- ANÁLISE -->
 
                 <div class="forecast-card">
 
                     <span class="badge-cloud">
+
                         Análise das Formações Isoladas
+
                     </span>
+
 
                     <h3>
                         O que o contorno revela?
@@ -626,6 +1931,7 @@
                     </p>
 
                 </div>
+
 
 
                 <!-- LINHA DO TEMPO -->
@@ -703,27 +2009,29 @@
 
                 </div>
 
+
             </div>
 
         </div>
 
 
+
         <!-- ==========================================
-             MAPA METEOROLÓGICO WINDY
-             MODELO ECMWF
+             6. WINDY / ECMWF
              ========================================== -->
 
         <div class="card">
 
             <h2>
-                O Tempo em Movimento — Mapa Meteorológico Interativo
+                O Tempo em Movimento —
+                Mapa Meteorológico Interativo
             </h2>
 
 
             <p class="windy-intro">
 
-                A leitura vernacular do céu é colocada em diálogo com
-                os dados meteorológicos disponíveis.
+                A leitura vernacular do céu é colocada em diálogo
+                com os dados meteorológicos disponíveis.
 
                 O mapa abaixo permite acompanhar espacialmente
                 a dinâmica da atmosfera na região de Icaraí,
@@ -733,7 +2041,7 @@
             </p>
 
 
-            <!-- IDENTIFICAÇÃO TÉCNICA -->
+            <!-- CONFIGURAÇÃO -->
 
             <div class="observation-note">
 
@@ -743,14 +2051,17 @@
 
                 Modelo numérico:
                 <strong>ECMWF</strong>
+
                 &nbsp;|&nbsp;
 
                 Variável:
                 <strong>Vento</strong>
+
                 &nbsp;|&nbsp;
 
                 Nível:
                 <strong>Superfície</strong>
+
                 &nbsp;|&nbsp;
 
                 Local:
@@ -759,7 +2070,7 @@
             </div>
 
 
-            <!-- MAPA -->
+            <!-- WINDY -->
 
             <div class="windy-container">
 
@@ -796,6 +2107,7 @@
     </div>
 
 
+
     <!-- ==========================================
          RODAPÉ
          ========================================== -->
@@ -803,12 +2115,15 @@
     <footer>
 
         <p>
+
             Desenvolvido com HTML5 & CSS3 —
             Projeto de Genealogias das Artes/Espaço e Meio Ambiente
+
         </p>
 
     </footer>
 
 
 </body>
+
 </html>
