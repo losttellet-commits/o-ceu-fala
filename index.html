@@ -89,7 +89,7 @@
 
 
         /* =========================
-           ESTRUTURA
+           ESTRUTURA GERAL
            ========================= */
 
         .container {
@@ -437,36 +437,79 @@
         }
 
 
-        /* =========================
-           IMAGENS DE CAMPO
-           ========================= */
+        /* =====================================================
+           IMAGENS DE CAMPO — GRADE 2x2
+           ===================================================== */
 
         .grid-2d {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+            display: grid;
 
-.img-container img {
-    width: 100%;
-    height: 420px;
-    object-fit: contain;
-    background: #f1f5f9;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-}
+            grid-template-columns: repeat(2, 1fr);
 
-.img-container:nth-child(4) {
-    grid-column: 1 / 3;
-}
+            gap: 24px;
 
-.img-container:nth-child(4) img {
-    height: 550px;
-}
+            align-items: stretch;
+        }
+
+
+        .img-container {
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            min-width: 0;
+        }
+
+
+        .img-container h3 {
+            font-size: 0.95rem;
+
+            color: #334155;
+
+            margin: 0 0 12px 0;
+
+            min-height: 58px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            line-height: 1.4;
+        }
+
+
+        /*
+         * Todas as imagens ocupam a mesma
+         * área visual.
+         *
+         * object-fit: contain evita deformação
+         * e evita cortar as imagens.
+         */
+
+        .img-container img {
+            width: 100%;
+
+            height: 330px;
+
+            object-fit: contain;
+
+            background: #f1f5f9;
+
+            border-radius: 8px;
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 2px 4px rgba(0,0,0,0.05);
+        }
 
 
         /* =========================
-           DIAGNÓSTICO
+           DIAGNÓSTICO E PREVISÃO
            ========================= */
 
         .forecast-grid {
@@ -542,9 +585,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            WINDY
-           ========================= */
+           ===================================================== */
 
         .windy-intro {
             margin-bottom: 20px;
@@ -613,19 +656,6 @@
         }
 
 
-        .art-intro {
-            max-width: 900px;
-
-            margin: 0 auto 30px auto;
-
-            text-align: center;
-
-            color: #475569;
-
-            font-size: 1.02rem;
-        }
-
-
         .art-opening {
             max-width: 850px;
 
@@ -642,6 +672,19 @@
             font-size: 1.05rem;
 
             text-align: center;
+        }
+
+
+        .art-intro {
+            max-width: 900px;
+
+            margin: 0 auto 30px auto;
+
+            text-align: center;
+
+            color: #475569;
+
+            font-size: 1.02rem;
         }
 
 
@@ -834,9 +877,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            RODAPÉ
-           ========================= */
+           ===================================================== */
 
         footer {
             text-align: center;
@@ -851,9 +894,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            RESPONSIVIDADE
-           ========================= */
+           ===================================================== */
 
         @media (max-width: 700px) {
 
@@ -882,20 +925,27 @@
             }
 
 
+            /*
+             * No celular, as quatro imagens
+             * passam para uma coluna.
+             */
+
             .grid-2d {
                 grid-template-columns: 1fr;
             }
 
 
-            .img-container:nth-child(4) {
-                grid-column: 1;
+            .img-container h3 {
+                min-height: auto;
+
+                padding: 5px 0;
             }
 
 
             .img-container img {
                 height: auto;
 
-                max-height: none;
+                max-height: 400px;
             }
 
 
@@ -1066,7 +1116,7 @@
 
                 <img
                     src="atlas-identificacao-nuvens.jpg"
-                    alt="Atlas de identificação de nuvens da Organização Meteorológica Mundial"
+                    alt="Atlas de identificação de nuvens"
                 >
 
             </div>
@@ -1090,14 +1140,7 @@
                 observe primeiro a estrutura da nuvem,
                 sua aparência geral e seu desenvolvimento vertical.
 
-                A altura também ajuda na identificação:
-
-                nuvens altas incluem Cirrus, Cirrocumulus e Cirrostratus;
-                nuvens médias incluem Altocumulus e Altostratus;
-                enquanto Stratus, Stratocumulus e Cumulus possuem bases
-                normalmente baixas.
-
-                O Cumulonimbus possui grande desenvolvimento vertical.
+                A altura também ajuda na identificação.
 
             </div>
 
@@ -1106,7 +1149,7 @@
 
 
         <!-- =====================================================
-             3. O QUE CADA NUVEM INDICA
+             3. GUIA DAS NUVENS
              ===================================================== -->
 
         <div class="card">
@@ -1135,8 +1178,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Cirrus</h3>
-                        <span class="cloud-abbr">Ci</span>
+
+                        <span class="cloud-abbr">
+                            Ci
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1144,15 +1192,19 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         filamentos finos, delicados ou fibrosos,
                         com aparência de penas ou fios.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         presença de cristais de gelo em altos níveis
                         e circulação atmosférica nessa região.
+
                     </p>
 
                 </div>
@@ -1162,8 +1214,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Cirrocumulus</h3>
-                        <span class="cloud-abbr">Cc</span>
+
+                        <span class="cloud-abbr">
+                            Cc
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1171,15 +1228,19 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         pequenos elementos brancos, grãos ou ondulações
                         organizados em campos.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         presença de umidade e movimentos atmosféricos
                         nos altos níveis.
+
                     </p>
 
                 </div>
@@ -1189,8 +1250,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Cirrostratus</h3>
-                        <span class="cloud-abbr">Cs</span>
+
+                        <span class="cloud-abbr">
+                            Cs
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1198,16 +1264,18 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         véu fino, esbranquiçado e relativamente
                         transparente, podendo produzir halo.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         aumento de umidade nos altos níveis.
-                        Pode fazer parte da evolução da nebulosidade
-                        associada a sistemas frontais.
+
                     </p>
 
                 </div>
@@ -1217,8 +1285,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Altocumulus</h3>
-                        <span class="cloud-abbr">Ac</span>
+
+                        <span class="cloud-abbr">
+                            Ac
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1226,15 +1299,19 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         elementos arredondados ou alongados,
                         organizados em grupos, faixas ou ondulações.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         presença de umidade e movimentos na média
                         troposfera.
+
                     </p>
 
                 </div>
@@ -1244,8 +1321,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Altostratus</h3>
-                        <span class="cloud-abbr">As</span>
+
+                        <span class="cloud-abbr">
+                            As
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1253,15 +1335,19 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         camada extensa, cinzenta ou azulada,
                         relativamente uniforme.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         aumento da cobertura de nuvens em escala
-                        mais ampla, podendo acompanhar áreas de chuva.
+                        mais ampla.
+
                     </p>
 
                 </div>
@@ -1271,8 +1357,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Nimbostratus</h3>
-                        <span class="cloud-abbr">Ns</span>
+
+                        <span class="cloud-abbr">
+                            Ns
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1280,15 +1371,19 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         camada espessa e extensa, geralmente escura,
                         associada a precipitação persistente.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
-                        chuva ou neve de caráter predominantemente
+                        chuva de caráter predominantemente
                         estratiforme e contínuo.
+
                     </p>
 
                 </div>
@@ -1298,8 +1393,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Stratocumulus</h3>
-                        <span class="cloud-abbr">Sc</span>
+
+                        <span class="cloud-abbr">
+                            Sc
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1307,14 +1407,18 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         grandes blocos, rolos ou agrupamentos baixos.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         presença de umidade e estrutura relativamente
                         estável na baixa atmosfera.
+
                     </p>
 
                 </div>
@@ -1324,8 +1428,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Stratus</h3>
-                        <span class="cloud-abbr">St</span>
+
+                        <span class="cloud-abbr">
+                            St
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1333,14 +1442,18 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         camada baixa, uniforme e acinzentada.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         ar úmido e relativamente estável próximo
-                        à superfície, podendo estar associado à garoa.
+                        à superfície.
+
                     </p>
 
                 </div>
@@ -1350,8 +1463,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Cumulus</h3>
-                        <span class="cloud-abbr">Cu</span>
+
+                        <span class="cloud-abbr">
+                            Cu
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1359,14 +1477,18 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         nuvens isoladas, com aparência de blocos
                         ou "algodões" e contornos definidos.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         desenvolvimento de convecção na baixa atmosfera.
+
                     </p>
 
                 </div>
@@ -1376,8 +1498,13 @@
                 <div class="cloud-guide-card">
 
                     <div class="cloud-name">
+
                         <h3>Cumulonimbus</h3>
-                        <span class="cloud-abbr">Cb</span>
+
+                        <span class="cloud-abbr">
+                            Cb
+                        </span>
+
                     </div>
 
                     <div class="cloud-level">
@@ -1385,15 +1512,19 @@
                     </div>
 
                     <p>
+
                         <strong>Como reconhecer:</strong>
                         enorme desenvolvimento vertical,
                         frequentemente com topo em forma de bigorna.
+
                     </p>
 
                     <p>
+
                         <strong>O que pode indicar:</strong>
                         convecção profunda e possibilidade de tempestade,
                         podendo envolver chuva intensa, raios e rajadas.
+
                     </p>
 
                 </div>
@@ -1484,70 +1615,96 @@
             </h2>
 
 
+            <p class="atlas-intro">
+
+                Quatro registros para acompanhar a relação entre
+                observação direta, intervenção gráfica e imagem
+                de satélite.
+
+            </p>
+
+
             <div class="grid-2d">
 
+
+                <!-- 1. SATÉLITE 29/09 -->
 
                 <div class="img-container">
 
                     <h3>
-                        Imagem do satélite GOES 16 no canal
-                        infravermelho do Brasil 29/09/2026
+
+                        Satélite GOES-16 —
+                        29/09/2026
+
                     </h3>
 
                     <img
                         src="img-infra-brasil.png"
-                        alt="Imagem do satélite GOES 16 no canal infravermelho do Brasil"
+                        alt="Imagem do satélite GOES-16 no canal infravermelho do Brasil em 29 de setembro de 2026"
                     >
 
                 </div>
 
 
 
+                <!-- 2. FOTO DO CÉU -->
+
                 <div class="img-container">
 
                     <h3>
-                        Fotografia Original da Praia de Icaraí 30/09
+
+                        O céu observado —
+                        Praia de Icaraí, 30/09/2026
+
                     </h3>
 
                     <img
                         src="img_praia_icarai.jpg"
-                        alt="Foto Original do Céu na Praia de Icaraí"
+                        alt="Fotografia original do céu na Praia de Icaraí"
                     >
 
                 </div>
 
 
 
+                <!-- 3. CONTORNO -->
+
                 <div class="img-container">
 
                     <h3>
-                        Contorno Vetorial das Nuvens
-                        (Desenhar ao Vivo)
+
+                        Desenhar ao vivo —
+                        Contorno das nuvens
+
                     </h3>
 
                     <img
                         src="img_nuvens_contornadas.PNG"
-                        alt="Contorno das nuvens Cirrus"
+                        alt="Contorno vetorial das nuvens observadas na Praia de Icaraí"
                     >
 
                 </div>
 
 
+
+                <!-- 4. SATÉLITE 30/09 -->
 
                 <div class="img-container">
 
                     <h3>
-                        Imagens do satélite GOES 16 no canal
-                        infravermelho da Região Sudeste do Brasil
-                        30/09/2026 às 18:10 UTC e 21:20 UTC
+
+                        Satélite GOES-16 —
+                        30/09/2026
+
                     </h3>
 
                     <img
                         src="imagens-satelite.png"
-                        alt="Imagem do satélite GOES 16 da Região Sudeste do Brasil"
+                        alt="Imagens do satélite GOES-16 no canal infravermelho da Região Sudeste do Brasil em 30 de setembro de 2026"
                     >
 
                 </div>
+
 
             </div>
 
@@ -1722,7 +1879,7 @@
 
 
         <!-- =====================================================
-             6. WINDY / ECMWF
+             6. WINDY
              ===================================================== -->
 
         <div class="card">
@@ -1816,9 +1973,11 @@
             <div class="art-opening">
 
                 <strong>
+
                     Depois de aprender a ler o céu,
                     tente lê-lo onde talvez você nunca tenha
                     pensado em procurar: na arte.
+
                 </strong>
 
             </div>
@@ -1850,9 +2009,7 @@
             <div class="art-grid">
 
 
-                <!-- =================================================
-                     OBRA 1
-                     ================================================= -->
+                <!-- OBRA 1 -->
 
                 <div class="art-card">
 
@@ -1925,9 +2082,7 @@
 
 
 
-                <!-- =================================================
-                     OBRA 2
-                     ================================================= -->
+                <!-- OBRA 2 -->
 
                 <div class="art-card">
 
@@ -2000,9 +2155,7 @@
 
 
 
-                <!-- =================================================
-                     OBRA 3
-                     ================================================= -->
+                <!-- OBRA 3 -->
 
                 <div class="art-card">
 
@@ -2076,9 +2229,7 @@
 
 
 
-                <!-- =================================================
-                     OBRA 4
-                     ================================================= -->
+                <!-- OBRA 4 -->
 
                 <div class="art-card">
 
@@ -2152,9 +2303,7 @@
 
 
 
-                <!-- =================================================
-                     OBRA 5
-                     ================================================= -->
+                <!-- OBRA 5 -->
 
                 <div class="art-card">
 
@@ -2228,9 +2377,7 @@
 
 
 
-                <!-- =================================================
-                     OBRA 6
-                     ================================================= -->
+                <!-- OBRA 6 -->
 
                 <div class="art-card">
 
@@ -2238,7 +2385,7 @@
 
                         <img
                             src="arte-06-ruisdael.jpg"
-                            alt="Paisagem com casa e ponte de pedra sob céu nublado, de Jacob van Ruisdael"
+                            alt="Paisagem de Jacob van Ruisdael"
                         >
 
                     </div>
@@ -2247,8 +2394,7 @@
                     <div class="art-content">
 
                         <h3 class="art-title">
-                            Paisagem com casa e ponte de pedra
-                            sob um céu nublado
+                            Paisagem sob céu nublado
                         </h3>
 
                         <div class="art-artist">
@@ -2307,10 +2453,6 @@
 
 
 
-            <!-- =====================================================
-                 FECHAMENTO
-                 ===================================================== -->
-
             <div class="art-final">
 
                 <h3>
@@ -2334,8 +2476,10 @@
                 <p>
 
                     <strong>
+
                         O céu continua sendo imagem.
                         Mas agora você também consegue lê-lo como atmosfera.
+
                     </strong>
 
                 </p>
@@ -2343,10 +2487,10 @@
 
                 <div class="art-credit">
 
-                    Obras utilizadas como exercício de observação artística.
-                    A classificação proposta é uma leitura visual e não
-                    pretende afirmar a identificação meteorológica objetiva
-                    das nuvens representadas nas pinturas.
+                    As obras são utilizadas como exercício de observação
+                    artística. A classificação proposta é uma leitura visual
+                    e não pretende afirmar a identificação meteorológica
+                    objetiva das nuvens representadas nas pinturas.
 
                 </div>
 
@@ -2377,7 +2521,7 @@
 
 
     <!-- =====================================================
-         JAVASCRIPT DO EXERCÍCIO
+         JAVASCRIPT — EXERCÍCIO ARTÍSTICO
          ===================================================== -->
 
     <script>
@@ -2395,16 +2539,16 @@
                 1: {
 
                     alta:
-                    "<strong>Boa tentativa.</strong> Mas aqui precisamos ter cuidado: a pintura de Van Gogh não permite classificar o céu como um gênero de nuvem da WMO com segurança. O céu é uma construção artística que combina observação e imaginação.",
+                    "<strong>Observe com cuidado.</strong> A pintura de Van Gogh não permite classificar o céu como um gênero de nuvem da WMO com segurança. A obra combina observação e imaginação.",
 
                     cumuliforme:
-                    "<strong>Boa leitura visual.</strong> Algumas formas podem lembrar movimentos ou estruturas atmosféricas, mas não é possível transformar diretamente as pinceladas de Van Gogh em uma classificação meteorológica.",
+                    "<strong>Boa leitura visual.</strong> Algumas formas podem lembrar estruturas atmosféricas, mas não é possível transformar diretamente as pinceladas em uma classificação meteorológica.",
 
                     estratiforme:
-                    "<strong>Observe novamente.</strong> A pintura não apresenta informação suficiente para determinar uma camada estratiforme. A classificação meteorológica não deve ser aplicada mecanicamente à representação artística.",
+                    "<strong>Observe novamente.</strong> A pintura não apresenta informação suficiente para determinar uma camada estratiforme.",
 
                     indeterminada:
-                    "<strong>Essa é uma leitura possível.</strong> A obra mistura observação e imaginação. Portanto, não é possível atribuir com segurança um gênero de nuvem meteorológico ao céu representado."
+                    "<strong>Essa é uma leitura possível.</strong> A obra mistura observação e imaginação. Não é possível atribuir com segurança um gênero meteorológico ao céu representado."
 
                 },
 
@@ -2412,16 +2556,16 @@
                 2: {
 
                     alta:
-                    "<strong>Observe a estrutura.</strong> A pintura apresenta massas e formas arredondadas que visualmente se aproximam mais de estruturas cumuliformes do que de nuvens altas filiformes.",
+                    "<strong>Observe a estrutura.</strong> As massas arredondadas visualmente se aproximam mais de estruturas cumuliformes do que de nuvens altas filiformes.",
 
                     cumuliforme:
-                    "<strong>Leitura possível.</strong> As formas volumosas e arredondadas de Constable podem ser lidas visualmente como estruturas cumuliformes. Ainda assim, trata-se de uma pintura, não de uma observação meteorológica.",
+                    "<strong>Leitura possível.</strong> As formas volumosas e arredondadas podem ser lidas visualmente como estruturas cumuliformes.",
 
                     estratiforme:
-                    "<strong>Observe a volumetria.</strong> Apesar das áreas horizontais, a pintura apresenta massas volumosas que sugerem uma leitura mais cumuliforme.",
+                    "<strong>Observe a volumetria.</strong> Apesar das áreas horizontais, existem massas volumosas que sugerem uma leitura mais cumuliforme.",
 
                     indeterminada:
-                    "<strong>Você foi cauteloso.</strong> Essa é uma posição defensável: a obra permite uma leitura morfológica, mas não uma classificação meteorológica precisa."
+                    "<strong>Você foi cauteloso.</strong> A obra permite uma leitura morfológica, mas não uma classificação meteorológica precisa."
 
                 },
 
@@ -2429,13 +2573,13 @@
                 3: {
 
                     alta:
-                    "<strong>Observe o desenvolvimento vertical.</strong> O céu apresenta grandes massas e contrastes, sugerindo uma atmosfera visualmente mais convectiva do que dominada por nuvens altas.",
+                    "<strong>Observe o desenvolvimento vertical.</strong> O céu apresenta grandes massas e contrastes, sugerindo uma atmosfera visualmente mais convectiva.",
 
                     cumuliforme:
-                    "<strong>Leitura visual coerente.</strong> As grandes massas volumosas e o contraste entre áreas claras e escuras permitem uma leitura cumuliforme. A presença do arco-íris também reforça a percepção de um ambiente associado à precipitação.",
+                    "<strong>Leitura visual coerente.</strong> As grandes massas volumosas permitem uma leitura cumuliforme. Ainda assim, trata-se de uma pintura.",
 
                     estratiforme:
-                    "<strong>Há alguma estrutura em camadas, mas...</strong> a pintura também apresenta massas volumosas. Por isso, uma leitura exclusivamente estratiforme seria limitada.",
+                    "<strong>Há alguma estrutura em camadas.</strong> Porém, a pintura também apresenta massas volumosas, tornando limitada uma leitura exclusivamente estratiforme.",
 
                     indeterminada:
                     "<strong>É uma resposta defensável.</strong> A pintura representa uma atmosfera complexa e não permite identificar um gênero meteorológico com certeza."
@@ -2446,7 +2590,7 @@
                 4: {
 
                     alta:
-                    "<strong>Observe novamente.</strong> O próprio título da obra remete à aproximação de nuvens de chuva, mas isso não permite identificar automaticamente um gênero da WMO.",
+                    "<strong>Observe novamente.</strong> O título remete a nuvens de chuva, mas isso não permite identificar automaticamente um gênero da WMO.",
 
                     cumuliforme:
                     "<strong>É uma possibilidade visual.</strong> Algumas formas apresentam volume e desenvolvimento, mas a pintura não permite confirmar um gênero específico.",
@@ -2455,7 +2599,7 @@
                     "<strong>É uma possibilidade visual.</strong> A grande massa escura pode sugerir uma estrutura extensa, mas a classificação precisa não pode ser determinada apenas pela pintura.",
 
                     indeterminada:
-                    "<strong>Essa é a leitura mais cuidadosa.</strong> A obra sugere uma atmosfera chuvosa e em transformação, mas não permite identificar um gênero meteorológico com segurança."
+                    "<strong>Essa é uma leitura cuidadosa.</strong> A obra sugere uma atmosfera chuvosa e em transformação, mas não permite identificar um gênero meteorológico com segurança."
 
                 },
 
@@ -2480,7 +2624,7 @@
                 6: {
 
                     alta:
-                    "<strong>Observe a distribuição das massas.</strong> O céu apresenta grandes volumes e uma camada extensa de nuvens. Não há informação suficiente para afirmar que sejam nuvens exclusivamente de altos níveis.",
+                    "<strong>Observe a distribuição das massas.</strong> O céu apresenta grandes volumes e uma camada extensa. Não há informação suficiente para afirmar que sejam nuvens exclusivamente de altos níveis.",
 
                     cumuliforme:
                     "<strong>Leitura visual possível.</strong> Algumas massas apresentam volume e contornos que lembram estruturas cumuliformes.",
