@@ -1,9 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Desenhar ao Vivo / Contrainformar - Leitura Vernacular do Tempo</title>
+
     <style>
         :root {
             --primary: #1a5b6e;
@@ -11,6 +14,10 @@
             --bg: #f8fafc;
             --card-bg: #ffffff;
             --text: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -67,7 +74,10 @@
             padding-bottom: 8px;
         }
 
-        /* Estilo da Proposta / Manifesto */
+        /* =========================
+           PROPOSTA / MANIFESTO
+           ========================= */
+
         .synthesis-box {
             background-color: #f1f5f9;
             border-left: 4px solid var(--primary);
@@ -78,6 +88,10 @@
             color: #0f172a;
             margin-bottom: 20px;
         }
+
+        /* =========================
+           OPERAÇÕES
+           ========================= */
 
         .operations-grid {
             display: grid;
@@ -100,6 +114,10 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
+        /* =========================
+           IMAGENS
+           ========================= */
 
         .grid-2d {
             display: grid;
@@ -125,6 +143,95 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
+        /* =========================
+           DIAGNÓSTICO / PREVISÃO
+           ========================= */
+
+        .forecast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .forecast-card {
+            background: #fafafa;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .forecast-card h3 {
+            color: var(--primary);
+            margin-top: 10px;
+        }
+
+        .badge-cloud {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #334155;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--accent);
+            padding: 10px 15px;
+            margin: 15px 0;
+            background: #f8fafc;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .observation-note {
+            margin-top: 20px;
+            padding: 12px 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        /* =========================
+           MAPA WINDY
+           ========================= */
+
+        .windy-intro {
+            margin-bottom: 20px;
+            color: #475569;
+        }
+
+        .windy-container {
+            width: 100%;
+            height: 600px;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background: #e2e8f0;
+        }
+
+        .windy-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .windy-note {
+            margin-top: 15px;
+            padding: 12px 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        /* =========================
+           RODAPÉ
+           ========================= */
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -132,117 +239,452 @@
             color: #94a3b8;
             font-size: 0.9rem;
         }
+
+        /* =========================
+           RESPONSIVIDADE
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 25px 15px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .grid-2d {
+                grid-template-columns: 1fr;
+            }
+
+            .windy-container {
+                height: 450px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header>
         <h1>O Céu Fala Conosco</h1>
-        <p class="subtitle">Uma cartografia de contrainformação sobre a dinâmica de nuvens e previsão do tempo por Lorena Sttellet</p>
+
+        <p class="subtitle">
+            Uma cartografia de contrainformação sobre a dinâmica de nuvens
+            e previsão do tempo por Lorena Sttellet
+        </p>
     </header>
 
+
     <div class="container">
-        
-        <!-- Bloco Conceitual / Enquadramento do Trabalho -->
+
+        <!-- ==========================================
+             BLOCO CONCEITUAL / ENQUADRAMENTO
+             ========================================== -->
+
         <div class="card">
+
             <h2>Proposta Cartográfica & Conceito</h2>
-            
+
             <div class="synthesis-box">
-                “Eu me aproximei do <strong>céu da orla da Praia de Icaraí</strong> por meio de <strong>DESENHAR AO VIVO</strong>. Fotografei <strong>nuvens altas (Cirrus e Cirrostratus) que indicaram o contínuo avanço de um sistema frontal (frente fria) associado a um ciclone extratropical que, juntamemte do movimento convectivo do ar (ascendência do ar quente e descendência do ar frio), ocasionou na formação da nuvem de tempestade Cumulonimbus (Cb), que ao atingir o seu desenvolvimento máximo, ocasionou na ventania durante o período da noite no dia 29/09 em torno de 22h</strong>. Ao <strong>CONTRAINFORMAR</strong>, transformei isso em <strong>um guia vernacular interativo de leitura do tempo</strong>, fazendo aparecer <strong>a capacidade do cidadão de ler os sinais da atmosfera diretamente pela observação do céu no tempo presente, subvertendo a dependência de aplicativos genéricos</strong>.”
+
+                “Eu me aproximei do
+                <strong>céu da orla da Praia de Icaraí</strong>
+                por meio de
+                <strong>DESENHAR AO VIVO</strong>.
+
+                Fotografei
+                <strong>nuvens altas (Cirrus e Cirrostratus)</strong>
+                que indicaram o contínuo avanço de um sistema frontal
+                (frente fria) associado a um ciclone extratropical que,
+                juntamente do movimento convectivo do ar
+                (ascendência do ar quente e descendência do ar frio),
+                ocasionou na formação da nuvem de tempestade
+                <strong>Cumulonimbus (Cb)</strong>,
+
+                que ao atingir o seu desenvolvimento máximo,
+                ocasionou na ventania durante o período da noite
+                no dia 29/09 em torno de 22h.
+
+                Ao
+                <strong>CONTRAINFORMAR</strong>,
+                transformei isso em
+                <strong>um guia vernacular interativo de leitura do tempo</strong>,
+                fazendo aparecer
+                <strong>
+                    a capacidade do cidadão de ler os sinais da atmosfera
+                    diretamente pela observação do céu no tempo presente,
+                    subvertendo a dependência de aplicativos genéricos
+                </strong>.”
+
             </div>
+
 
             <div class="operations-grid">
+
                 <div class="op-box">
+
                     <h3>1ª Operação: DESENHAR AO VIVO</h3>
-                    <p>Registro fotográfico realizado na Praia de Icaraí para observar a dinâmica das nuvens. Ao contornar ao vivo a morfologia das formações de altitude, isolou-se a assinatura visual que sucedeu a precipitação do dia 30/09 no litoral fluminense.</p>
+
+                    <p>
+                        Registro fotográfico realizado na Praia de Icaraí
+                        para observar a dinâmica das nuvens.
+
+                        Ao contornar ao vivo a morfologia das formações
+                        de altitude, isolou-se a assinatura visual que
+                        sucedeu a precipitação do dia 30/09 no litoral
+                        fluminense.
+                    </p>
+
                 </div>
+
+
                 <div class="op-box">
+
                     <h3>2ª Operação: CONTRAINFORMAR</h3>
-                    <p>A informação meteorológica oficial costuma ser reduzida a porcentagens abstratas em aplicativos. A transformação material utiliza este site para traduzir o conhecimento técnico em uma ferramenta de leitura direta do território e do céu pelo cidadão.</p>
+
+                    <p>
+                        A informação meteorológica oficial costuma ser
+                        reduzida a porcentagens abstratas em aplicativos.
+
+                        A transformação material utiliza este site para
+                        traduzir o conhecimento técnico em uma ferramenta
+                        de leitura direta do território e do céu pelo cidadão.
+                    </p>
+
                 </div>
+
             </div>
+
         </div>
 
-        <!-- Bloco de Registros / Observação da Praia de Icaraí -->
+
+        <!-- ==========================================
+             BLOCO DE REGISTROS
+             ========================================== -->
+
         <div class="card">
+
             <h2>Observação de Campo e Contorno do Céu</h2>
+
             <div class="grid-2d">
 
-                <div class="img-container">
-                    <h3>Imagem do satélite GOES 16 no canal infravermelho do Brasil 29/09/2026</h3>
-                    <img src="img-infra-brasil.png" alt="Foto Original do Céu na Praia de Icaraí">
-                </div>
-    
-                <div class="img-container">
-                    <h3>Fotografia Original da Praia de Icaraí 29/09</h3>
-                    <img src="img_praia_icarai.jpg" alt="Foto Original do Céu na Praia de Icaraí">
-                </div>
-                <div class="img-container">
-                    <h3>Contorno Vetorial das Nuvens (Desenhar ao Vivo)</h3>
-                    <img src="img_nuvens_contornadas.PNG" alt="Contorno das nuvens Cirrus">
-                </div>
-                <div class="img-container">
-                    <h3>Imagene do satélite GOES 16 no canal infravermelho da Região Sudeste do Brasil 30/09/2026 às 18:10 UTC e 21:20 UTC (- 3 horas local)</h3>
-                    <img src="imagens-satelite.png" alt="Foto Original do Céu na Praia de Icaraí">
-                </div>
-            </div>
-        </div>
-        
-<!-- NOVO BLOCO: Diagnóstico e Previsão a partir das Nuvens -->
-<div class="card">
-    <h2>Identificação das Nuvens & Diagnóstico de Previsão</h2>
-    
-    <div class="forecast-grid">
-        
-        <div class="forecast-card">
-            <span class="badge-cloud">Análise das Formações Isoladas</span>
-            <h3>O que o contorno revela?</h3>
-            
-            <p><strong>• Cirrus / possível Cirrus uncinus (Camada Superior):</strong>
-            Nuvens altas, finas e filiformes, algumas apresentando curvaturas características de gancho. Sua presença pode estar associada à aproximação e à evolução de sistemas meteorológicos em escala sinótica.</p>
-            
-            <p><strong>• Cirrostratus (Véu de Altos Níveis):</strong>
-            Camada fina e translúcida de nuvens altas. Quando presente de forma mais contínua, pode indicar aumento da umidade nos altos níveis da atmosfera e a aproximação de um sistema frontal.</p>
-            
-            <p><strong>• Altocumulus (Camada Média):</strong>
-            Nuvens de nível médio observadas em fragmentos e faixas. Sua distribuição revela a presença de umidade e movimentação atmosférica nessa camada, podendo acompanhar mudanças nas condições do tempo.</p>
 
-            <p class="observation-note">
-                <strong>Nota de observação:</strong> a identificação das nuvens é baseada em sua morfologia e aparência no momento do registro. 
-                A confirmação de cisalhamento, intensidade dos ventos, deslocamento de massas de ar ou aproximação de frentes requer a análise conjunta de outros dados meteorológicos.
+                <div class="img-container">
+
+                    <h3>
+                        Imagem do satélite GOES 16 no canal infravermelho
+                        do Brasil 29/09/2026
+                    </h3>
+
+                    <img
+                        src="img-infra-brasil.png"
+                        alt="Imagem do satélite GOES 16 no canal infravermelho do Brasil"
+                    >
+
+                </div>
+
+
+                <div class="img-container">
+
+                    <h3>
+                        Fotografia Original da Praia de Icaraí 29/09
+                    </h3>
+
+                    <img
+                        src="img_praia_icarai.jpg"
+                        alt="Foto Original do Céu na Praia de Icaraí"
+                    >
+
+                </div>
+
+
+                <div class="img-container">
+
+                    <h3>
+                        Contorno Vetorial das Nuvens
+                        (Desenhar ao Vivo)
+                    </h3>
+
+                    <img
+                        src="img_nuvens_contornadas.PNG"
+                        alt="Contorno das nuvens Cirrus"
+                    >
+
+                </div>
+
+
+                <div class="img-container">
+
+                    <h3>
+                        Imagens do satélite GOES 16 no canal infravermelho
+                        da Região Sudeste do Brasil 30/09/2026 às 18:10 UTC
+                        e 21:20 UTC (-3 horas local)
+                    </h3>
+
+                    <img
+                        src="imagens-satelite.png"
+                        alt="Imagem do satélite GOES 16 da Região Sudeste do Brasil"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             DIAGNÓSTICO E PREVISÃO
+             ========================================== -->
+
+        <div class="card">
+
+            <h2>
+                Identificação das Nuvens & Diagnóstico de Previsão
+            </h2>
+
+
+            <div class="forecast-grid">
+
+
+                <div class="forecast-card">
+
+                    <span class="badge-cloud">
+                        Análise das Formações Isoladas
+                    </span>
+
+                    <h3>
+                        O que o contorno revela?
+                    </h3>
+
+
+                    <p>
+
+                        <strong>
+                            • Cirrus / possível Cirrus uncinus
+                            (Camada Superior):
+                        </strong>
+
+                        Nuvens altas, finas e filiformes,
+                        algumas apresentando curvaturas características
+                        de gancho.
+
+                        Sua presença pode estar associada à aproximação
+                        e à evolução de sistemas meteorológicos
+                        em escala sinótica.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            • Cirrostratus
+                            (Véu de Altos Níveis):
+                        </strong>
+
+                        Camada fina e translúcida de nuvens altas.
+
+                        Quando presente de forma mais contínua,
+                        pode indicar aumento da umidade nos altos níveis
+                        da atmosfera e a aproximação de um sistema frontal.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            • Altocumulus
+                            (Camada Média):
+                        </strong>
+
+                        Nuvens de nível médio observadas em fragmentos
+                        e faixas.
+
+                        Sua distribuição revela a presença de umidade
+                        e movimentação atmosférica nessa camada,
+                        podendo acompanhar mudanças nas condições do tempo.
+
+                    </p>
+
+
+                    <p class="observation-note">
+
+                        <strong>Nota de observação:</strong>
+
+                        a identificação das nuvens é baseada em sua
+                        morfologia e aparência no momento do registro.
+
+                        A confirmação de cisalhamento, intensidade
+                        dos ventos, deslocamento de massas de ar ou
+                        aproximação de frentes requer a análise conjunta
+                        de outros dados meteorológicos.
+
+                    </p>
+
+                </div>
+
+
+                <div class="forecast-card">
+
+                    <span class="badge-cloud">
+                        <strong>
+                            Linha do tempo a partir da formação da nuvem
+                        </strong>
+                    </span>
+
+
+                    <h3>
+                        O que o céu informou (Previsão):
+                    </h3>
+
+
+                    <div class="timeline-item">
+
+                        <strong>
+                            Curto Prazo (0 a 6h) — Pré-Frontal:
+                        </strong>
+
+                        Manutenção do calor e da sensação de abafamento,
+                        com intensificação dos ventos de quadrante
+                        Leste/Nordeste e aumento gradual da nebulosidade
+                        em níveis médios.
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <strong>
+                            Médio Prazo (6 a 12h) — Passagem da Frente:
+                        </strong>
+
+                        Mudança do vento para os quadrantes Sul/Sudeste,
+                        com intensificação das rajadas e ocorrência
+                        de ventania durante a noite, acompanhada de
+                        queda acentuada da temperatura.
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <strong>
+                            Pós-Frente (12 a 24h):
+                        </strong>
+
+                        Aumento da cobertura de nuvens estratiformes,
+                        com possibilidade de Altostratus e Nimbostratus,
+                        favorecendo a ocorrência de chuva fraca a moderada
+                        e condições de mar mais agitado na Baía de Guanabara.
+
+                    </div>
+
+
+                    <p class="observation-note">
+
+                        <strong>Leitura retrospectiva:</strong>
+
+                        a previsão é construída a partir da evolução
+                        observada posteriormente e deve ser interpretada
+                        em conjunto com a sequência temporal das imagens
+                        e os demais dados meteorológicos disponíveis.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             MAPA METEOROLÓGICO WINDY
+             ========================================== -->
+
+        <div class="card">
+
+            <h2>
+                O Tempo em Movimento — Mapa Meteorológico Interativo
+            </h2>
+
+
+            <p class="windy-intro">
+
+                A leitura vernacular do céu é colocada em diálogo com
+                os dados meteorológicos disponíveis.
+
+                O mapa abaixo permite acompanhar espacialmente
+                a dinâmica da atmosfera na região de Icaraí,
+                observando a circulação dos ventos e a evolução
+                das condições meteorológicas.
+
             </p>
-        </div>
 
-        <div class="forecast-card">
-            <span class="badge-cloud"><strong>Linha do tempo a partir da formação da nuvem</strong></span>
-            <h3>O que o céu informou (Previsão):</h3>
-            
-            <div class="timeline-item">
-                <strong>Curto Prazo (0 a 6h) — Pré-Frontal:</strong>
-                Manutenção do calor e da sensação de abafamento, com intensificação dos ventos de quadrante Leste/Nordeste e aumento gradual da nebulosidade em níveis médios.
+
+            <div class="windy-container">
+
+                <iframe
+                    src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=%C2%B0C&metricWind=km%2Fh&zoom=10&overlay=wind&product=ecmwf&level=surface&lat=-22.907&lon=-43.101"
+                    title="Mapa meteorológico interativo Windy"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+
             </div>
 
-            <div class="timeline-item">
-                <strong>Médio Prazo (6 a 12h) — Passagem da Frente:</strong>
-                Mudança do vento para os quadrantes Sul/Sudeste, com intensificação das rajadas e ocorrência de ventania durante a noite, acompanhada de queda acentuada da temperatura.
-            </div>
 
-            <div class="timeline-item">
-                <strong>Pós-Frente (12 a 24h):</strong>
-                Aumento da cobertura de nuvens estratiformes, com possibilidade de Altostratus e Nimbostratus, favorecendo a ocorrência de chuva fraca a moderada e condições de mar mais agitado na Baía de Guanabara.
-            </div>
+            <p class="windy-note">
 
-            <p class="observation-note">
-                <strong>Leitura retrospectiva:</strong> a previsão é construída a partir da evolução observada posteriormente e deve ser interpretada em conjunto com a sequência temporal das imagens e os demais dados meteorológicos disponíveis.
+                <strong>Leitura:</strong>
+
+                o mapa permite explorar a dinâmica atmosférica
+                em diferentes horários e escalas.
+
+                Os dados apresentados são provenientes do serviço
+                meteorológico do Windy e devem ser interpretados
+                em conjunto com a observação direta do céu,
+                os registros fotográficos e os demais dados
+                meteorológicos apresentados neste trabalho.
+
             </p>
+
         </div>
+
 
     </div>
-</div>
-        
+
+
+    <!-- ==========================================
+         RODAPÉ
+         ========================================== -->
+
     <footer>
-        <p>Desenvolvido com HTML5 & CSS3 — Projeto de Genealogias das Artes/Espaço e Meio Ambiente</p>
+
+        <p>
+            Desenvolvido com HTML5 & CSS3 —
+            Projeto de Genealogias das Artes/Espaço e Meio Ambiente
+        </p>
+
     </footer>
+
 
 </body>
 </html>
+```
